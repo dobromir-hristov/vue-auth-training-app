@@ -1,0 +1,13 @@
+{
+  "navigations": {
+    "home": "Home",
+    "about": "About",
+    "cpanel": "Admin Panel",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "languages": {
+    "en": "English",
+    "bg": "Bulgarian"
+  }
+}

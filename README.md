@@ -1,5 +1,15 @@
 # basic-aut-app
 
+- [X] Explain structure
+- [X] Api service
+- [X] Login
+- [X] Basic auth store module
+- [X] Storing Token 
+- [ ] fetching user
+- [X] Routes
+- [X] Route guards
+- [X] Navigation component
+
 ## Project setup
 ```
 npm install
