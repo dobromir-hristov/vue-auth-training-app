@@ -20,15 +20,18 @@ export default {
   components: { TheNavigationItem },
   data () {
     return {
+      // create an array of routes. We use destructuring to extract data for each route
       navigationItems: [
         {
           ...routes.home
         },
+        // this is a custom action nav item, not a route
         {
           meta: {
             label: 'navigations.logout',
             auth: true
           },
+          // action to trigger. We pass a function as a property.
           action: () => this.$store.dispatch('logout')
         },
         {

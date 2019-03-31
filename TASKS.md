@@ -1,3 +1,5 @@
+0. Redirect to Home page after logging in.
+
 1. Implement sweetAlert2 as a helper to the Vue prototype - $notify.error, $notify.success, $confirm etc. Try adding it as a service so we can use it outside of Vue components.
 
 2. Create a helper function to handle API errors. It should accept an api error and show an error message, using the above added functionality. Add it to the prototype if you can.

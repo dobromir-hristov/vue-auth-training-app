@@ -10,6 +10,7 @@ const store = new Vuex.Store({
   }
 })
 
+// Restore the Token from localStorage to Vuex
 store.commit('STORE_TOKEN', window.localStorage.getItem('TOKEN') || '')
 
 export default store

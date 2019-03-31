@@ -28,6 +28,7 @@ export default {
     }
   },
   methods: {
+    // extract the login action from Vuex to our component to be used as a method
     ...mapActions([
       'login'
     ]),
@@ -35,11 +36,14 @@ export default {
       this.isLoading = true
       this.errorMessage = ''
 
+      // calls the login action and passes the form object to it
       this.login(this.form)
         .then((response) => {
+          // when its done we set isLoading to false.
           this.isLoading = false
         })
         .catch((error) => {
+          // if there was an error in the API, we show it.
           this.isLoading = false
           this.errorMessage = error.response.data.error
         })

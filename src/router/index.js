@@ -5,8 +5,10 @@ import { canAccess } from '../utils'
 
 Vue.use(Router)
 
+// Loads Pages async
 const load = (name) => () => import(`../views/${name}.vue`)
 
+// define a router instance
 const routerInstance = new Router({
   routes: [
     {
@@ -32,9 +34,11 @@ const routerInstance = new Router({
   ]
 })
 
+// Attaches a beforeEach hook that is called before every route is visited.
 routerInstance.beforeEach((to, from, next) => {
   // if user has access
   if (canAccess(to.meta.auth)) {
+    // continue as he has access
     next()
   } else {
     // if user does not have access and tries to go to Login page, go to home
