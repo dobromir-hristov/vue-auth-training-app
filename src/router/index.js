@@ -10,6 +10,7 @@ const load = (name) => () => import(`../views/${name}.vue`)
 
 // define a router instance
 const routerInstance = new Router({
+  mode: 'history',
   routes: [
     {
       ...routes.home,

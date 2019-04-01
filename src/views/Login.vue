@@ -4,7 +4,7 @@
     <div v-if="errorMessage">
       {{ errorMessage }}
     </div>
-    <form @submit.prevent="submit">
+    <form @submit.prevent="submit" v-if="showForm">
       <input type="text" v-model="form.username">
       <input type="password" v-model="form.password">
       <button type="submit">Submit</button>
@@ -19,6 +19,7 @@ export default {
   name: 'Login',
   data () {
     return {
+      showForm: true,
       isLoading: false,
       form: {
         username: '',
@@ -41,6 +42,8 @@ export default {
         .then((response) => {
           // when its done we set isLoading to false.
           this.isLoading = false
+          this.showForm = false
+          this.$router.push('/')
         })
         .catch((error) => {
           // if there was an error in the API, we show it.
