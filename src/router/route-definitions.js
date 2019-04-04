@@ -3,6 +3,7 @@ export const routes = {
   home: {
     name: 'home',
     meta: {
+      auth: true,
       label: 'navigations.home'
     }
   },
