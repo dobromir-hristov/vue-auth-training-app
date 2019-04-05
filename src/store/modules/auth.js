@@ -1,4 +1,5 @@
 import { AuthService } from '@/services/AuthService'
+import { notifyService } from '@/services/notifyService'
 
 // State of the module
 const state = {
@@ -22,6 +23,9 @@ const mutations = {
 }
 
 const actions = {
+  tryIt () {
+    return notifyService
+  },
   login ({ commit }, form) {
     return AuthService.login(form)
       .then((response) => {

@@ -1,11 +1,13 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <button @click="runNotify()">Click</button>
+    <button @click="tryIt">Click</button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
  data() {
    return {
@@ -13,14 +15,9 @@ export default {
    }
  },
  methods: {
-   runNotify() {
-     this.$notify.fire({
-      title: 'Error!',
-      text: 'Do you want to continue',
-      type: 'error',
-      confirmButtonText: 'Cool'
-    })
-   }
+    ...mapActions([
+    'tryIt'
+  ]),
  }
 }
 </script>
