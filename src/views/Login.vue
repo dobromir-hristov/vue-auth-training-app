@@ -43,7 +43,7 @@ export default {
           // when its done we set isLoading to false.
           this.isLoading = false
           this.showForm = false
-          this.$router.push('/')
+          this.$router.push({ name: 'home' })
         })
         .catch((error) => {
           // if there was an error in the API, we show it.
