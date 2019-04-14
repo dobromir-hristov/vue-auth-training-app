@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <button @click="test">Make Swal</button>
   </div>
 </template>
 
@@ -11,6 +12,9 @@ export default {
   methods: {
     getSomething () {
       this.$api.get()
+    },
+    test () {
+      this.$swal.swalTest('ferrari')
     }
   }
 }

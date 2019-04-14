@@ -1,9 +1,7 @@
 import Swal from 'sweetalert2'
 
-var success = {
-  type: 'success',
-  title: 'Your work has been saved',
-  text: 'Everything Good!'
+export const SwalService = {
+  swalTest (text) {
+    Swal.fire("'" + text + "'")
+  }
 }
-
-const SwalService = Swal.fire(success)
