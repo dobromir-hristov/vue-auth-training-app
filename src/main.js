@@ -10,7 +10,7 @@ import Swal from '@/services/SwalService'
 Vue.use(VueI18n)
 Vue.config.productionTip = false
 Vue.prototype.$api = Api
-Vue.prototype.$swal = Swal
+Vue.prototype.$notify = Swal
 
 const i18n = new VueI18n({
   locale: 'en',
