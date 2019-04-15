@@ -5,6 +5,9 @@ import auth from './modules/auth'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
+  state: {
+    userName: ''
+  },
   modules: {
     auth
   }

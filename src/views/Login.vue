@@ -34,13 +34,18 @@ export default {
     ]),
     submit () {
       this.isLoading = true
+      //Store username
+      this.$store.state.userName = this.form.username
       this.errorMessage = ''
 
       // calls the login action and passes the form object to it
       this.login(this.form)
         .then((response) => {
+          // define to which view to redirect
+          this.$router.push({name: 'home'});
           // when its done we set isLoading to false.
           this.isLoading = false
+          this.$notify.login(this.$store.state.userName)
         })
         .catch((error) => {
           // if there was an error in the API, we show it.
