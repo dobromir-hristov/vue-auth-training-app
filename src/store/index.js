@@ -10,6 +10,11 @@ const store = new Vuex.Store({
   },
   modules: {
     auth
+  },
+  mutations: {
+    storeUsername (state, username) {
+      state.userName = username
+    }
   }
 })
 

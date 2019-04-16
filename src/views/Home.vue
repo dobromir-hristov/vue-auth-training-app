@@ -19,10 +19,10 @@ export default {
       this.$api.get()
     },
     showSucces () {
-      this.$notify.success(this.$store.state.userName)
+      this.$notify.success(this.$store.state.userName, "You've just complete an event")
     },
     showError () {
-      this.$notify.error(this.$store.state.userName)
+      this.$notify.error('You broke everything :@')
     },
     showWarning () {
       this.$notify.warning(this.$store.state.userName)

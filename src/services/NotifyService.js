@@ -3,20 +3,20 @@ import Swal from 'sweetalert2'
 export default {
 
   //Succesfull Alert
-  success (yourName) {
+  success (yourName, yourMsg) {
     return Swal.fire({
       type: 'success',
-      title: yourName + ', Your work has been saved',
-      text: 'Everything Good!'
+      title: yourName,
+      text: yourMsg
     })
   },
 
   //Error Alert
-  error (yourName) {
+  error (errorMsg) {
     return Swal.fire({
       type: 'error',
-      title: 'Oops...  ' + yourName,
-      text: 'Something went wrong!',
+      title: 'Oops...',
+      text: errorMsg,
     })
   },
 
@@ -39,14 +39,5 @@ export default {
         )
       }
     })
-  },
-
-  //Login Alert
-  login (yourName) {
-    return Swal.fire({
-      type: 'success',
-      title: 'Welcome, ' + yourName + ' !',
-      text: 'Now you can play with this wonderful alert buttons!',
-    })
-  },
+  }
 }

@@ -30,8 +30,6 @@ const actions = {
   },
   logout () {
     window.localStorage.removeItem('TOKEN')
-    //Clear username
-    window.localStorage.removeItem('username')
     window.location.reload()
   }
 }

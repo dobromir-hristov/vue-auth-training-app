@@ -14,6 +14,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import Swal from 'sweetalert2'
 
 export default {
   name: 'Login',
@@ -35,7 +36,7 @@ export default {
     submit () {
       this.isLoading = true
       //Store username
-      this.$store.state.userName = this.form.username
+      this.$store.commit('storeUsername', this.form.username )
       this.errorMessage = ''
 
       // calls the login action and passes the form object to it
@@ -45,7 +46,12 @@ export default {
           this.$router.push({name: 'home'});
           // when its done we set isLoading to false.
           this.isLoading = false
-          this.$notify.login(this.$store.state.userName)
+          // Welcome Message
+          Swal.fire({
+            type: 'success',
+            title: 'Welcome, ' + this.$store.state.userName + ' !',
+            text: 'Now you can play with this wonderful application!',
+          })
         })
         .catch((error) => {
           // if there was an error in the API, we show it.
