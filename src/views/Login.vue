@@ -46,7 +46,10 @@ export default {
           // Store username
           this.$store.commit('STORE_USERNAME', this.form.username )
           // Welcome Message
-          this.$notify.login(this.$store.state.userName)
+          this.$notify.success({
+            title: "Welcome, "  + this.$store.state.userName + " !", 
+            text: "Now you can play with this wonderful application!"
+          })
         })
         .catch((error) => {
           // if there was an error in the API, we show it.

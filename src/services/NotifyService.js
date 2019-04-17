@@ -11,11 +11,10 @@ export default {
   },
 
   //  Error Alert
-  error (error) {
+  error (params) {
     return Swal.fire({
       type: 'error',
-      title: 'Oops...',
-      text: error
+      ...params
     })
   },
 
@@ -37,15 +36,6 @@ export default {
           'success'
         )
       }
-    })
-  },
-
-  //  Login Alert
-  login (title) {
-    return Swal.fire({
-      type: 'success',
-      title: 'Welcome, ' + title + ' !',
-      text: 'Now you can play with this wonderful application!'
     })
   }
 }

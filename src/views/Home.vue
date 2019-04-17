@@ -25,7 +25,9 @@ export default {
       })
     },
     showError () {
-      this.$notify.error('You broke everything :@')
+      this.$notify.error({
+        text: "You broke everything :@"
+      })
     },
     showWarning () {
       this.$notify.warning(this.$store.state.userName)
