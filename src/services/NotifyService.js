@@ -2,28 +2,27 @@ import Swal from 'sweetalert2'
 
 export default {
 
-  //Succesfull Alert
-  success (yourName, yourMsg) {
+  //  Succesfull Alert
+  success (params) {
     return Swal.fire({
       type: 'success',
-      title: yourName,
-      text: yourMsg
+      ...params
     })
   },
 
-  //Error Alert
-  error (errorMsg) {
+  //  Error Alert
+  error (error) {
     return Swal.fire({
       type: 'error',
       title: 'Oops...',
-      text: errorMsg,
+      text: error
     })
   },
 
-  //Warning Alert
-  warning (yourName) {
+  //  Warning Alert
+  warning (title) {
     return Swal.fire({
-      title: yourName + ', Are you sure?',
+      title: title + ', Are you sure?',
       text: "You won't be able to revert this!",
       type: 'warning',
       showCancelButton: true,
@@ -38,6 +37,15 @@ export default {
           'success'
         )
       }
+    })
+  },
+
+  //  Login Alert
+  login (title) {
+    return Swal.fire({
+      type: 'success',
+      title: 'Welcome, ' + title + ' !',
+      text: 'Now you can play with this wonderful application!'
     })
   }
 }
