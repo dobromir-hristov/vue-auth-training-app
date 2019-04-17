@@ -39,8 +39,17 @@ export default {
       // calls the login action and passes the form object to it
       this.login(this.form)
         .then((response) => {
+          // define to which view to redirect
+          this.$router.push({name: 'home'});
           // when its done we set isLoading to false.
           this.isLoading = false
+          // Store username
+          this.$store.commit('STORE_USERNAME', this.form.username )
+          // Welcome Message
+          this.$notify.success({
+            title: `"Welcome, ${this.$store.state.userName}!"`, 
+            text: "Now you can play with this wonderful application!"
+          })
         })
         .catch((error) => {
           // if there was an error in the API, we show it.

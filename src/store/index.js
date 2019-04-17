@@ -5,8 +5,16 @@ import auth from './modules/auth'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
+  state: {
+    userName: ''
+  },
   modules: {
     auth
+  },
+  mutations: {
+    STORE_USERNAME (state, username) {
+      state.userName = username
+    }
   }
 })
 
