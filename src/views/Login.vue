@@ -47,7 +47,7 @@ export default {
           this.$store.commit('STORE_USERNAME', this.form.username )
           // Welcome Message
           this.$notify.success({
-            title: "Welcome, "  + this.$store.state.userName + " !", 
+            title: `"Welcome, ${this.$store.state.userName}!"`, 
             text: "Now you can play with this wonderful application!"
           })
         })
