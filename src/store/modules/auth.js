@@ -25,7 +25,7 @@ const actions = {
   login ({ commit }, form) {
     return AuthService.login(form)
       .then((response) => {
-        commit('STORE_TOKEN', response.data.token)
+        commit('STORE_TOKEN', response.data.accessToken)
       })
   },
   logout () {

@@ -20,6 +20,21 @@ npm install
 npm run serve
 ```
 
+### Runs a local API server
+```
+npm run api
+```
+
+### You can now use these routes:
+
+accounts: **user@mail.com** and **user2@mail.com**
+password: 12345
+
+* **login** - _POST_
+* **register** - _POST_
+* **books** - _GET_ - Guarded, needs JWT Token
+* **users** - _GET_
+
 ### Compiles and minifies for production
 ```
 npm run build

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Creates a new Axios instance
 const axiosInstance = axios.create({
-  baseURL: 'https://reqres.in/api'
+  baseURL: 'http://localhost:3000'
 })
 
 // Passes these methods from axios to our service

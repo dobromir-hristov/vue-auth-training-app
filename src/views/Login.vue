@@ -5,8 +5,8 @@
       {{ errorMessage }}
     </div>
     <form @submit.prevent="submit">
-      <input type="text" v-model="form.username">
-      <input type="password" v-model="form.password">
+      <input type="email" v-model="form.email" placeholder="user@mail.com">
+      <input type="password" v-model="form.password" placeholder="12345">
       <button type="submit">Submit</button>
     </form>
   </div>
@@ -21,7 +21,7 @@ export default {
     return {
       isLoading: false,
       form: {
-        username: '',
+        email: '',
         password: ''
       },
       errorMessage: ''
@@ -45,7 +45,7 @@ export default {
         .catch((error) => {
           // if there was an error in the API, we show it.
           this.isLoading = false
-          this.errorMessage = error.response.data.error
+          this.errorMessage = error.response.data
         })
     }
   }
